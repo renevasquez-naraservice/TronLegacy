@@ -18,7 +18,7 @@ body {
 /* HERO */
 .hero {
     height: 100vh;
-    background: url("img/TRON.gif") no-repeat center center/cover;
+    background: url("../img/TRON.gif") no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
