@@ -1,0 +1,157 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Orbitron', Arial, sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url("img/TRON.gif") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: #00f0ff;
+    text-shadow: 0 0 15px #00f0ff, 0 0 30px #00ffff;
+}
+
+.hero p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    color: #ffcc00;
+}
+
+/* BOTÓN */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #00f0ff;
+    color: #000;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 0 15px #00f0ff, 0 0 30px #00ffff;
+}
+.btn:hover {
+    background: #ffcc00;
+    box-shadow: 0 0 20px #ffcc00, 0 0 40px #ffcc00;
+}
+
+/* SECCIONES */
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.dark {
+    background: #0d0d0d;
+}
+
+.light {
+    background: #111;
+}
+
+.container {
+    max-width: 1000px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffcc00;
+    text-shadow: 0 0 10px #ffcc00;
+}
+
+/* GALERÍA */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #00f0ff;
+    box-shadow: 0 0 15px #00f0ff;
+    transition: transform 0.3s;
+}
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #00ffff;
+}
+
+/* PERSONAJES */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border: 2px solid #00f0ff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00f0ff;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* DETALLES */
+ul {
+    list-style: none;
+    font-size: 1.2rem;
+}
+ul li {
+    margin: 10px 0;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    border-top: 1px solid #00f0ff;
+    font-size: 0.9rem;
+    color: #888;
+}
