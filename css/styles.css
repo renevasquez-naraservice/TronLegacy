@@ -11,7 +11,7 @@ html {
 
 body {
     font-family: 'Orbitron', Arial, sans-serif;
-    background: #000;
+    background: #000000cb;
     color: #fff;
 }
 
@@ -68,15 +68,6 @@ body {
     box-shadow: 0 0 20px #ffcc00, 0 0 40px #ffcc00;
 }
 
-/* SECCIONES */
-.section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
-}
-
 .dark {
     background: #0d0d0d;
 }
@@ -124,17 +115,70 @@ h2 {
 }
 
 .card {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 15px;
-    border: 2px solid #00f0ff;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1.2; /* mantiene proporción */
+    overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 0 20px #00f0ff;
+    border: 2px solid transparent; /* sin borde por defecto */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card img {
     width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Overlay negro semi-transparente */
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.596);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1; /*esto es para la posicion debajo del texto */
+}
+
+/* Nombre centrado y visible sobre overlay para mejor visualizacion*/
+.card h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffcc00;
+    font-size: 1rem;
+    font-weight: bold;
+    opacity: 0;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: opacity 0.5s ease;
+    z-index: 2; /*estto es para que el texto aparesca encima del overlay */
+    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffff00;
+}
+
+/* Esto es prate del Hover: activamos borde, overlay, nombre y efecto de la imagen */
+.card:hover {
+    border-color: #00f0ff;
+    box-shadow: 0 0 15px #00f0ff, 0 0 40px #00ffff;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+    filter: blur(2px);
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+.card:hover h3 {
+    opacity: 1;
 }
 
 /* DETALLES */
@@ -154,4 +198,35 @@ footer {
     border-top: 1px solid #00f0ff;
     font-size: 0.9rem;
     color: #888;
+}
+
+/* Secciones con fade-in automático */
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+
+    /* Fade-in automático */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1s ease-out forwards;
+}
+
+.section:nth-of-type(n) {
+    animation-delay: calc(n * 0.2s);
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
 }
