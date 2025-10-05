@@ -43,7 +43,7 @@ body {
 
 /* 2. ACCESIBILIDAD (A11y) y FOCO VISIBLE */
 
-a:focus, button:focus, input:focus, .nav-link:focus, .tab-link:focus, .card:focus {
+a:focus, button:focus, input:focus, .nav-link:focus, .tab-link:focus, .card:focus,.btn:focus {
     outline: 2px solid var(--primary-blue);
     outline-offset: 3px;
     border-radius: 4px;
@@ -154,7 +154,8 @@ h2 {
     font-weight: bold;
     text-decoration: none;
     transition: background 0.3s;
-    box-shadow: 0 0 15px #fff; /* Sombra sutil */
+    box-shadow: 0 0 15px #ffffff; /* Sombra sutil */
+    
 }
 
 .trailer-btn {
@@ -167,21 +168,26 @@ h2 {
     background: var(--neon-red);
     color: var(--dark-bg);
     box-shadow: 0 0 20px var(--neon-red), 0 0 40px var(--neon-red);
+    text-shadow: 0px 0px 2px rgb(255, 255, 255);
 }
 
 /* GALERÍA */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem ;
 }
+
 .gallery img {
-    width: 100%;
+    height: 250px;
+    object-fit: cover; 
+    width: 100%; 
     border-radius: 10px;
     border: 2px solid var(--primary-blue);
     box-shadow: 0 0 15px var(--primary-blue);
     transition: transform 0.3s;
 }
+
 .gallery img:hover {
     transform: scale(1.05);
     box-shadow: 0 0 30px var(--primary-blue);
@@ -205,7 +211,7 @@ h2 {
 }
 
 .container {
-    max-width: 70%;
+    max-width: 80%;
     padding: 1rem;
 }
 .card img {
