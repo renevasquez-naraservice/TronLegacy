@@ -1,3 +1,13 @@
+
+/* 1. VARIABLES Y RESET BÁSICO */
+:root {
+    --primary-blue: #00bcd4; /* Color TRON principal (foco y neón) */
+    --neon-yellow: #ffcc00;  /* Color secundario para detalles */
+    --neon-red: #FF0000;
+    --dark-bg: #000000;
+    --header-bg: rgba(0, 0, 0, 0.85);
+}
+
 /* RESET */
 * {
     margin: 0;
@@ -6,16 +16,94 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; 
 }
 
 body {
-    font-family: 'Orbitron', Arial, sans-serif;
-    background: #000000cb;
+    font-family: 'Orbitron',Arial, sans-serif; 
+    background: var(--dark-bg);
     color: #fff;
 }
+/* --------------------------------------------------------------------------------------------- */
 
-/* HERO */
+/*otros */
+
+.dark {
+    background: #0d0d0d;
+}
+
+.light {
+    background: #111;
+}
+.container {
+    max-width: 1000px;
+    text-align: center;
+}
+/* --------------------------------------------------------------------------------------------- */
+
+/* 2. ACCESIBILIDAD (A11y) y FOCO VISIBLE */
+
+a:focus, button:focus, input:focus, .nav-link:focus, .tab-link:focus, .card:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+}
+.skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    background: #fff;
+    color: #000;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    z-index: 9999;
+}
+
+/* --------------------------------------------------------------------------------------------- */
+
+/* 3. NAVEGACIÓN Y ESTRUCTURA GLOBAL */
+
+#main-header {
+    background-color: var(--header-bg);
+    backdrop-filter: blur(5px); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-link-active {
+    color: #fff !important;
+    font-weight: bold;
+    border-bottom: 2px solid #fff;
+}
+
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--neon-yellow);
+    text-shadow: 0 0 50px var(--neon-yellow);
+    text-align: center; /* Se mantiene centrado para títulos de sección */
+}
+
+/* --------------------------------------------------------------------------------------------- */
+
+/* 4. SECCIÓN PRINCIPAL (HERO) */
+
+.hero-section {
+    min-height: 100vh; 
+    background: 
+        linear-gradient(to top, var(--dark-bg) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0) 100%),
+        url('../img/banner-tron.png') no-repeat center center/cover;
+    padding-top: 100px; 
+    display: flex;
+    align-items: flex-end;
+}
 .hero {
     height: 100vh;
     background: url("../img/TRON.gif") no-repeat center center/cover;
@@ -25,7 +113,12 @@ body {
     text-align: center;
     position: relative;
 }
-
+.hero p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    color:fff;
+    text-shadow: 0px 0px 5px #fff;
+}
 .hero::after {
     content: "";
     position: absolute;
@@ -38,54 +131,42 @@ body {
     position: relative;
     z-index: 2;
 }
-
-.hero h1 {
-    font-size: 4rem;
-    color: #00f0ff;
-    text-shadow: 0 0 15px #00f0ff, 0 0 30px #00ffff;
+.movie-details {
+    /* CORRECCIÓN: Forzar alineación a la izquierda */
+    text-align: left;
 }
 
-.hero p {
-    margin: 20px 0;
-    font-size: 1.2rem;
-    color: #ffcc00;
+.tron-title {
+    color: #fff;
+    text-shadow: 0 0 10px var(--primary-blue), 0 0 20px var(--primary-blue), 0 0 40px rgba(0, 188, 212, 0.5);
 }
 
-/* BOTÓN */
+/* --------------------------------------------------------------------------------------------- */
+
+/* 5. ELEMENTOS DE CONTENIDO (BOTONES, GALERÍA, TARJETAS) */
+
 .btn {
     display: inline-block;
     padding: 12px 25px;
-    background: #00f0ff;
+    background: #fff;
     color: #000;
     border-radius: 8px;
     font-weight: bold;
     text-decoration: none;
-    transition: 0.3s;
-    box-shadow: 0 0 15px #00f0ff, 0 0 30px #00ffff;
+    transition: background 0.3s;
+    box-shadow: 0 0 15px #fff; /* Sombra sutil */
 }
+
+.trailer-btn {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
 .btn:hover {
-    background: #ffcc00;
-    box-shadow: 0 0 20px #ffcc00, 0 0 40px #ffcc00;
-}
-
-.dark {
-    background: #0d0d0d;
-}
-
-.light {
-    background: #111;
-}
-
-.container {
-    max-width: 1000px;
-    text-align: center;
-}
-
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #ffcc00;
-    text-shadow: 0 0 10px #ffcc00;
+    background: var(--neon-red);
+    color: var(--dark-bg);
+    box-shadow: 0 0 20px var(--neon-red), 0 0 40px var(--neon-red);
 }
 
 /* GALERÍA */
@@ -94,46 +175,44 @@ h2 {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
-
 .gallery img {
     width: 100%;
     border-radius: 10px;
-    border: 2px solid #00f0ff;
-    box-shadow: 0 0 15px #00f0ff;
+    border: 2px solid var(--primary-blue);
+    box-shadow: 0 0 15px var(--primary-blue);
     transition: transform 0.3s;
 }
 .gallery img:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 30px #00ffff;
+    box-shadow: 0 0 30px var(--primary-blue);
 }
 
-/* PERSONAJES */
+/* PERSONAJES (Tarjetas) */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
-
 .card {
     position: relative;
     width: 100%;
-    aspect-ratio: 1/1.2; /* mantiene proporción */
+    aspect-ratio: 1/1.2;
     overflow: hidden;
     border-radius: 10px;
-    border: 2px solid transparent; /* sin borde por defecto */
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border: 2px solid transparent;
     transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
+.container {
+    max-width: 70%;
+    padding: 1rem;
+}
 .card img {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     object-fit: cover;
-    display: block;
     transition: transform 0.5s ease, filter 0.5s ease;
 }
-
-/* Overlay negro semi-transparente */
 .card::after {
     content: "";
     position: absolute;
@@ -141,50 +220,41 @@ h2 {
     background: rgba(0, 0, 0, 0.596);
     opacity: 0;
     transition: opacity 0.5s ease;
-    z-index: 1; /*esto es para la posicion debajo del texto */
+    z-index: 1;
 }
-
-/* Nombre centrado y visible sobre overlay para mejor visualizacion*/
 .card h3 {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    color: #ffcc00;
-    font-size: 1rem;
+    color: var(--neon-yellow);
+    font-size: 1.5rem;
     font-weight: bold;
     opacity: 0;
-    text-align: center;
     padding: 5px 10px;
     border-radius: 5px;
+    text-shadow: 0 0 10px var(--neon-yellow),0 0 20px var(--neon-yellow);
     transition: opacity 0.5s ease;
-    z-index: 2; /*estto es para que el texto aparesca encima del overlay */
-    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffff00;
+    z-index: 2;
 }
 
-/* Esto es prate del Hover: activamos borde, overlay, nombre y efecto de la imagen */
+/* Hover de la Tarjeta */
 .card:hover {
-    border-color: #00f0ff;
-    box-shadow: 0 0 15px #00f0ff, 0 0 40px #00ffff;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 15px var(--primary-blue), 0 0 40px var(--primary-blue);
 }
-
 .card:hover img {
     transform: scale(1.1);
     filter: blur(2px);
 }
-
-.card:hover::after {
+.card:hover::after, .card:hover h3 {
     opacity: 1;
 }
 
-.card:hover h3 {
-    opacity: 1;
-}
-
-/* DETALLES */
+/* DETALLES (Listas) */
 ul {
     list-style: none;
     font-size: 1.2rem;
+    padding-left: 0;
 }
 ul li {
     margin: 10px 0;
@@ -200,7 +270,10 @@ footer {
     color: #888;
 }
 
-/* Secciones con fade-in automático */
+/* --------------------------------------------------------------------------------------------- */
+
+/* 6. ANIMACIONES Y KEYFRAMES */
+
 .section {
     min-height: 100vh;
     display: flex;
@@ -208,15 +281,16 @@ footer {
     justify-content: center;
     padding: 60px 20px;
 
-    /* Fade-in automático */
+    /* Inicio del estado oculto/animable */
     opacity: 0;
     transform: translateY(50px);
+    
+    /* Aplica la animación */
     animation: fadeUp 1s ease-out forwards;
 }
 
 .section:nth-of-type(n) {
-    animation-delay: calc(n * 0.2s);
-}
+    animation-delay: calc(var(--n) * 0.2s); }
 
 @keyframes fadeUp {
     0% {
@@ -228,5 +302,28 @@ footer {
         opacity: 1;
         transform: translateY(0);
         filter: blur(0);
+    }
+}
+
+
+/* Menu */
+/* Ajuste de color del icono del menú (toggler) para temas oscuros */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.navbar-toggler-icon {
+    /* Filtro para hacer el icono blanco (CSS trick) */
+    filter: invert(1);
+}
+/* --------------------------------------------------------------------------------------------- */
+
+/* 7. RESPONSIVE SIMPLE */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 50vh; 
+        background-position: top center; 
+    }
+    .tron-title {
+        font-size: 2.2rem;
     }
 }
