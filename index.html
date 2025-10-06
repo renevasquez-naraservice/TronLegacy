@@ -21,7 +21,7 @@
     <!-- Header/Menú navegación -->
     <header class="navbar navbar-expand-lg fixed-top" id="main-header">
         <div class="container-fluid">
-            <a class="navbar-brand text-light fw-bold" href="#" aria-label="Volver a la Página Principal">Película</a>
+            <a class="navbar-brand text-light fw-bold" href="#" aria-label="Volver a la Página Principal">MAIN</a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Mostrar u Ocultar Menú de Navegación">
@@ -31,13 +31,15 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 
                 <nav class="navbar-nav me-auto mb-2 mb-lg-0" aria-label="Navegación Principal de Secciones">
-                    <a class="nav-link text-light" href="#inicio" aria-label="Ir a la Portada y Presentación">INICIO</a>
+                    <a class="nav-link nav-link-active" href="#banner" aria-label="Ir al banner" href="#">PELÍCULA</a>
+                    <a class="nav-link text-light" href="#inicio" aria-label="Ir al inicio">INICIO</a>
                     <a class="nav-link text-light" href="#sinopsis" aria-label="Ir a la Sección Sinopsis" data-bs-dismiss="collapse">SINOPSIS</a>
                     <a class="nav-link text-light" href="#galeria" aria-label="Ir a la Sección Galería de Imágenes" data-bs-dismiss="collapse">GALERÍA</a>
                     <a class="nav-link text-light" href="#personajes" aria-label="Ir a la Sección Personajes" data-bs-dismiss="collapse">PERSONAJES</a>
                     <a class="nav-link text-light" href="#detalles" aria-label="Ir a los Detalles Técnicos" data-bs-dismiss="collapse">DETALLES</a>
                     <a class="nav-link text-light" href="#musica" aria-label="Ir a los Detalles De Sound Track" data-bs-dismiss="collapse">SOUND TRACK</a>
-                    <a class="nav-link nav-link-active" href="#">PELÍCULAS</a> 
+                    <a class="nav-link text-light" href="#ares" aria-label="Ir a los Detalles De La nueva película TRON" data-bs-dismiss="collapse">ARES</a>
+                     
                 </nav>
 
                 <div class="d-flex align-items-center ms-auto">
@@ -50,30 +52,34 @@
 
     <!-- Contenido Principal -->
     <main id="main-content">
-        <div class="hero-section d-flex align-items-end section">
-            <div class="container py-5 movie-details">
-                
-                <h1 class="display-4 fw-bold tron-title">TRON: LEGACY</h1>
+        <!-- Banner  -->
+        <section id="banner" class="">
+            <div class="hero-section d-flex align-items-end section">
+                <div class="container py-5 movie-details">
+                    
+                    <h1 class="display-4 fw-bold tron-title">TRON: LEGACY</h1>
 
-                <p class="text-secondary small">
-                    <span aria-label="Clasificación de edad 10 años o más">10+</span> | HD | CC | AD |
-                    <span aria-hidden="true">•</span> 2010 <span aria-hidden="true">•</span> 2 h 9 min <span aria-hidden="true">•</span> Acción y aventura, Ciencia ficción
-                </p>
+                    <p class="text-secondary small">
+                        <span aria-label="Clasificación de edad 10 años o más">10+</span> | HD | CC | AD |
+                        <span aria-hidden="true">•</span> 2010 <span aria-hidden="true">•</span> 2 h 9 min <span aria-hidden="true">•</span> Acción y aventura, Ciencia ficción
+                    </p>
 
-                <p class="col-md-6 mb-4">
-                    El hijo de un famoso creador de videojuegos va a rescatar a su padre en un universo cibernético.
-                </p>
+                    <p class="col-md-6 mb-4">
+                        El hijo de un famoso creador de videojuegos va a rescatar a su padre en un universo cibernético.
+                    </p>
 
-                <div class="d-flex ">
-                    <a href="#" class="btn btn-light btn-lg me-3" aria-label="Iniciar Reproducción de TRON: Legacy">
-                        <span aria-hidden="true">▶</span> VER
-                    </a>
-                    <a href="https://youtu.be/pqCgsk2Li_4" class="btn btn-outline-light btn-lg trailer-btn" aria-label="Ver el tráiler oficial de TRON: Legacy">
-                        TRÁILER
-                    </a>
+                    <div class="d-flex ">
+                        <a href="#" class="btn btn-light btn-lg me-3" aria-label="Iniciar Reproducción de TRON: Legacy">
+                            <span aria-hidden="true">▶</span> VER
+                        </a>
+                        <a href="https://youtu.be/pqCgsk2Li_4" class="btn btn-outline-light btn-lg trailer-btn" aria-label="Ver el tráiler oficial de TRON: Legacy">
+                            TRÁILER
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+        
 
         <!-- Inicio -->
         <section id="inicio" class="presentation">
@@ -197,14 +203,14 @@
                 <h2>Banda Sonora: El Ritmo de la Grid</h2>
                 
                 <p class="lead text-light mb-4">
-                    La banda sonora de *TRON: Legacy*, compuesta y producida por el dúo electrónico francés **Daft Punk**, no es solo un acompañamiento, sino una parte fundamental del universo visual. Fusionaron la **orquestación clásica** con su característico **sonido electrónico** para crear un paisaje sonoro épico y futurista.
+                    La banda sonora de <strong>"TRON: Legacy"</strong> , compuesta y producida por el dúo electrónico francés "Daft Punk", no es solo un acompañamiento, sino una parte fundamental del universo visual. Fusionaron la orquestación clásica con su característico **sonido electrónico** para crear un paisaje sonoro épico y futurista.
                 </p>
                 
                 <div class="row text-start mt-5">
                     <div class="col-md-6 mb-4">
                         <h3 class="h4 text-warning">Composición y Enfoque</h3>
                         <p>
-                            Daft Punk pasó más de dos años creando 24 *tracks* para la película. Su objetivo fue honrar el sintetizador minimalista de la película original de 1982, mientras lo elevaban con una orquesta de **85 piezas** grabada en el legendario **AIR Lyndhurst Studios** en Londres. 
+                            Daft Punk pasó más de dos años creando 24 "tracks" para la película. Su objetivo fue honrar el sintetizador minimalista de la película original de 1982, mientras lo elevaban con una orquesta de "85 piezas" grabada en el legendario "AIR Lyndhurst Studios" en Londres. 
                         </p>
                         <p>
                             El director, Joseph Kosinski, quería un sonido que fuera "tecnológico y emocional", un balance perfecto que el dúo logró al evitar los sonidos EDM pesados de la época.
@@ -225,6 +231,58 @@
                 <a href="https://open.spotify.com/intl-es/album/3AMXFnwHWXCvNr5NCCpLZI?si=rNSUAK5kSduSC6NeekMLaA" class="btn btn-outline-light mt-4" target="_blank" aria-label="Escuchar la banda sonora de Daft Punk en Spotify">
                     <span aria-hidden="true">▶</span> Escuchar Álbum
                 </a>
+            </div>
+        </section>
+
+        <!-- Nueva Película Tron Ares -->
+         <section id="ares" class="section light py-5">
+            <div class="container">
+                
+                <h2 class="mb-4">Próximo Estreno: TRON: Ares 🚀</h2>
+                
+                <p class="lead mt-3 mb-5 mx-auto" style="max-width: 800px;">
+                    ¡La Grid se expande! Después de años de espera, la tercera entrega de la saga, "TRON: Ares", está oficialmente en camino. Aquí tienes lo que sabemos sobre el salto del mundo digital al real.
+                </p>
+
+                <div class="row justify-content-center g-4">
+                    
+                    <div class="col-12 col-md-6 col-lg-5 text-start">
+                        
+                        <h3 class="mb-3" style="color: var(--primary-blue); text-shadow: 0 0 8px var(--primary-blue);">
+                            Datos Clave de la Transmisión
+                        </h3>
+                        
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><strong>Título:</strong> TRON: Ares</li>
+                            <li class="mb-2"><strong>Fecha de Estreno:</strong> 10 de octubre de 2025</li>
+                            <li class="mb-2"><strong>Protagonista:</strong> Jared Leto (como Ares)</li>
+                            <li class="mb-2"><strong>Director:</strong> Joachim Rønning</li>
+                            <li class="mb-2"><strong>Regreso Épico:</strong> Jeff Bridges como Kevin Flynn está confirmado.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-12 col-md-6 col-lg-5 text-start">
+                        
+                        <h3 class="mb-3" style="color: var(--primary-blue); text-shadow: 0 0 8px var(--primary-blue);">
+                            Sinopsis de la Colisión
+                        </h3>
+                        
+                        <p class="mb-3">
+                            La trama se centra en **Ares**, un programa de inteligencia artificial altamente sofisticado, que es enviado desde el mundo digital de la Grid al mundo real en una misión peligrosa.
+                        </p>
+                        <p>
+                            Esto marca el primer encuentro de la humanidad con seres de la IA, lo que plantea grandes preguntas sobre la conciencia, la tecnología y el futuro de nuestra realidad.
+                        </p>
+                    </div>
+                    
+                </div>
+                
+                <div class="d-flex justify-content-center mt-5">
+                    <a href="https://youtu.be/zvahPW14Qos" target="_blank" class="btn trailer-btn btn-lg ">
+                        Ver Tráiler Oficial (2025)
+                    </a>
+                </div>
+                
             </div>
         </section>
         
