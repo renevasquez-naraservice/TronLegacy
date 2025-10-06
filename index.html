@@ -18,6 +18,7 @@
 <body>
     <a href="#main-content" class="skip-link visually-hidden-focusable" aria-label="Saltar al Contenido Principal de la Película">Saltar al Contenido Principal</a>
 
+    <!-- Header/Menú navegación -->
     <header class="navbar navbar-expand-lg fixed-top" id="main-header">
         <div class="container-fluid">
             <a class="navbar-brand text-light fw-bold" href="#" aria-label="Volver a la Página Principal">Película</a>
@@ -47,6 +48,7 @@
         </div>
     </header>
 
+    <!-- Contenido Principal -->
     <main id="main-content">
         <div class="hero-section d-flex align-items-end section">
             <div class="container py-5 movie-details">
@@ -73,6 +75,7 @@
             </div>
         </div>
 
+        <!-- Inicio -->
         <section id="inicio" class="presentation">
             <div class="presentation-content">
                 <h2 class="display-4 fw-bold tron-title">LA RED</h2>
@@ -81,6 +84,7 @@
             </div>
         </section>
 
+        <!-- Sinopsis -->
         <section id="sinopsis" class="section dark">
             <div class="container">
                 <h2>Sinopsis</h2>
@@ -90,6 +94,7 @@
             </div>
         </section>
 
+        <!-- Galeria -->
         <section id="galeria" class="section light">
             <div class="container">
                 <h2>Galería</h2>
@@ -106,6 +111,7 @@
             </div>
         </section>
 
+        <!-- Personajes -->
         <section id="personajes" class="section dark">
             <div class="container">
                 <h2>Personajes</h2>
@@ -130,17 +136,62 @@
             </div>
         </section>
 
+        <!-- Detalles -->
         <section id="detalles" class="section light">
             <div class="container">
                 <h2>Detalles Técnicos</h2>
-                <ul>
-                    <li><strong>Año:</strong> 2010</li>
-                    <li><strong>Director:</strong> Joseph Kosinski</li>
-                    <li><strong>Música:</strong> Daft Punk</li>
-                    <li><strong>Productora:</strong> Disney</li>
-                </ul>
+                <p class="lead mb-4">
+                    Datos clave sobre la producción, el elenco y los logros técnicos de la película.
+                </p>
+                
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped text-start mx-auto" style="max-width: 600px;">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-primary-blue">Categoría</th>
+                                <th scope="col" class="text-primary-blue">Detalle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Título Original</th>
+                                <td>TRON: Legacy</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Año de Estreno</th>
+                                <td>2010</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Duración</th>
+                                <td>125 minutos (2 h 5 min)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Director</th>
+                                <td>Joseph Kosinski</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Música</th>
+                                <td>Daft Punk</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Guionistas</th>
+                                <td>Edward Kitsis & Adam Horowitz</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Compañía Productora</th>
+                                <td>Walt Disney Pictures</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Género</th>
+                                <td>Ciencia Ficción, Acción, Cyberpunk</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
+
+        <!-- Música -->
         <section id="musica" class="section dark">
             <div class="container">
                 <h2>Banda Sonora: El Ritmo de la Grid</h2>
@@ -179,6 +230,7 @@
         
     </main>
 
+    <!-- Pie de página -->
     <footer>
         <p>© 2025 TRON: Legacy FanPage</p>
     </footer>
